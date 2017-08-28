@@ -2,6 +2,7 @@ package eduardobachiega.udacityreportcard;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -21,6 +22,6 @@ public class MainActivity extends AppCompatActivity {
         subjectsAndGrades.put("Machine learning", 86);
         subjectsAndGrades.put("Big data", 62);
         ReportCard rp = new ReportCard("Udacity", "Eduardo Bachiega", subjectsAndGrades);
-        tvReportCard.setText(rp.getReportCard());
+        tvReportCard.setText(rp.toString());
     }
 }

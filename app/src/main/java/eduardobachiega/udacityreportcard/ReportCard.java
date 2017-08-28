@@ -12,7 +12,7 @@ public class ReportCard {
     Map<String, Integer> subjectsAndGrades; //A Map to school subjects and grades
 
     public ReportCard(String schoolName, String studentName,
-                      Map<String, Integer> subjectsAndGrades){
+                      Map<String, Integer> subjectsAndGrades) {
         this.schoolName = schoolName;
         this.studentName = studentName;
         this.subjectsAndGrades = subjectsAndGrades;
@@ -42,10 +42,11 @@ public class ReportCard {
         this.subjectsAndGrades = subjectsAndGrades;
     }
 
-    public String getReportCard(){
+    @Override
+    public String toString() {
         String formattedReportCard = String.format("School: %s%n", getSchoolName());
         formattedReportCard += String.format("Student: %s%n%nGrades%n%n", getStudentName());
-        for (Map.Entry<String, Integer> subjectsAndGrades : getSubjectsAndGrades().entrySet()){
+        for (Map.Entry<String, Integer> subjectsAndGrades : getSubjectsAndGrades().entrySet()) {
             String subject = subjectsAndGrades.getKey();
             int grade = subjectsAndGrades.getValue();
             String gradeClassification;
@@ -65,14 +66,5 @@ public class ReportCard {
             formattedReportCard += String.format("%s: %s%n", subject, gradeClassification);
         }
         return formattedReportCard;
-    }
-
-    @Override
-    public String toString() {
-        return "ReportCard{" +
-                "schoolName='" + schoolName + '\'' +
-                ", studentName='" + studentName + '\'' +
-                ", subjectsAndGrades=" + subjectsAndGrades +
-                '}';
     }
 }
